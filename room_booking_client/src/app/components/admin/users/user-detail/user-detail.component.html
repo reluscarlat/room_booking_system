@@ -1,0 +1,20 @@
+<div class="userDetails">
+  <h2>User details</h2>
+  <a class="btn btn-small btn-warning" *ngIf="isAdminUser" (click)="editUser()">edit</a>
+  <a class="btn btn-small btn-warning" *ngIf="isAdminUser" (click)="deleteUser()">delete</a>
+  <div class="p-5 bg-warning" *ngIf="message">{{message}}</div>
+  <table>
+    <tr>
+      <td>id</td>
+      <td>{{user?.id}}</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>{{user?.name}}</td>
+    </tr>
+    <tr *ngIf="isAdminUser">
+      <td>Password</td>
+      <td><a class="btn btn-small btn-warning" (click)="resetPassword()">reset</a></td>
+    </tr>
+  </table>
+</div>
